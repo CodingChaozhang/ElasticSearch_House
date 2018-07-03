@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/lib/datatables/1.10.15/jquery.dataTables.css">
+    <div th:include="admin/common :: head"></div>
+    <link rel="stylesheet" type="text/css" href="/static/css/admin/house-list.css">
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/static/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="/static/lib/respond.min.js"></script>
+    <![endif]-->
+    <title>预约列表</title>
+</head>
+<body>
+<nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 房源管理
+    <span class="c-gray en">&gt;</span> 房源列表
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i>
+    </a>
+</nav>
+<div class="text-c">
+
+</div>
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
+</div>
+
+<div class="page-container">
+    <div class="mt-20">
+        <table id="data-table"
+               class="table table-border table-bordered table-bg table-hover table-sort table-responsive"
+               style="width: 100%">
+            <thead>
+            <tr class="text-c">
+                <th width="15">ID</th>
+                <th>标题</th>
+                <th>封面</th>
+                <th>面积</th>
+                <th>价格</th>
+                <th>楼层</th>
+                <th>带看次数</th>
+                <th width="70">用户预约时间</th>
+                <th>用户信息</th>
+                <th width="80">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer th:include="admin/common :: footer"></footer>
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/static/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/lib/datatables/1.10.15/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/static/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="/static/js/admin/house-subscribe.js"></script>
+</body>
+</html>

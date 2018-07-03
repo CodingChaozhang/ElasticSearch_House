@@ -1,0 +1,105 @@
+/* 统一样式配置 */
+
+.navbar-default {
+    background-color: #5bc0de;
+    border-color: #21a1c7;
+}
+.navbar-default .navbar-brand {
+    color: #f6f9f9;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffffff;
+}
+.navbar-default .navbar-text {
+    color: #f6f9f9;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #f6f9f9;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #21a1c7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #ffffff;
+    background-color: #21a1c7;
+}
+.navbar-default .navbar-toggle {
+    border-color: #21a1c7;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #21a1c7;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #f6f9f9;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #f6f9f9;
+}
+.navbar-default .navbar-link {
+    color: #f6f9f9;
+}
+.navbar-default .navbar-link:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #f6f9f9;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #ffffff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #ffffff;
+        background-color: #21a1c7;
+    }
+}
+/*--copyrights--*/
+.footer-bottom a {
+    color: #6cbc35;
+    font-size: 1em;
+    line-height: 1.8em;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #a1a1a1;
+}
+
+.footer-bottom span {
+    color: #3498db;
+}
+
+.footer-bottom p {
+    color: #a1a1a1;
+    font-size: 1em;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+.footer-bottom {
+    background: #191919;
+    padding: 1em 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-bottom p {
+    font-size: 0.875em;
+}

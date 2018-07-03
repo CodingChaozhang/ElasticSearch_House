@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/static/lib/layui/layui.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/main.css" rel='stylesheet' type='text/css'/>
+    <link href="/static/css/user/center.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+</head>
+<body>
+<header th:replace="common :: header"></header>
+<div class="container user-body">
+    <div class="user-left fl">
+        <div class="avatar">
+            <img src="/static/images/user/default-avatar.png" width="80px" height="80px">
+        </div>
+
+        <div class="user-name">
+            欢迎你，<span th:text="${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}"></span>
+        </div>
+
+        <ul class="select">
+            <li class="hover"><a href="javascript:void(0);" data-bind="wait-record">待看清单</a></li>
+            <li><a href="javascript:void(0);" data-bind="subscribe">我的预约</a></li>
+            <li><a href="javascript:void(0);" data-bind="finish-record">看房记录</a></li>
+            <li><a href="javascript:void(0);" data-bind="edit-info">编辑资料</a></li>
+        </ul>
+    </div>
+    <div class="user-right fl">
+        <div class="right-body wait-record on">
+            <div class="title">待看清单</div>
+            <hr class="split-line"/>
+            <form action="#">
+                <div class="content">
+                    <ul id="wait-record-list">
+                    </ul>
+                </div>
+                <div class="fl blue-btn">
+                    <span style="color: red">*</span><span>联系方式：
+                    <input name="telephone" type="text" placeholder="手机号"></span>
+                    <span style="color: red">*</span><span>预约时间：
+                    <input type="text" name="orderTime"
+                           onFocus="WdatePicker({startDate:'%y-%M-{%d+1}', dateFmt:'yyyy-MM-dd',
+                                    alwaysUseStartDate:true, minDate:'%y-%M-{%d+1}'})"/></span>
+                    <button type="submit">确认预约</button>
+                </div>
+            </form>
+        </div>
+        <div class="right-body subscribe">
+            <div class="title">预约列表</div>
+            <hr class="split-line"/>
+            <div class="content">
+                <ul>
+                </ul>
+            </div>
+            <div class="fl blue-btn">
+                <button type="button">取消预约</button>
+            </div>
+        </div>
+
+        <div class="right-body finish-record">
+            <div class="title">看房记录</div>
+            <hr class="split-line"/>
+            <div class="content">
+                <ul>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-body edit-info">
+            <div class="title">个人信息</div>
+            <hr class="split-line"/>
+            <div class="content">
+                <div class="tab">
+                    <span class="actTab hover" data-bind="change-name">修改昵称</span>
+                    <span class="actTab" data-bind="change-email">修改邮箱</span>
+                    <span class="actTab" data-bind="change-password">修改密码</span>
+                </div>
+                <div class="modify-tab">
+                    <div class="modify-content change-name on">
+                        <ul class="change-pwd">
+                            <li>
+                                <span>设置昵称：</span>
+                                <input type="text" name="name" class="nickName">
+                            </li>
+                            <li><span></span><a class="nameSubmit lj-btn">保存修改</a></li>
+                        </ul>
+                    </div>
+                    <div class="modify-content change-email">
+                        <ul class="change-pwd">
+                            <li>
+                                <span>设置邮箱：</span>
+                                <input type="text" name="email" class="email">
+                            </li>
+                            <li><span></span><a class="emailSubmit lj-btn">保存修改</a></li>
+                        </ul>
+                    </div>
+                    <div class="modify-content change-password">
+                        <ul class="change-pwd">
+                            <li>
+                                <span>设置密码：</span>
+                                <input type="password" name="password" class="nickName">
+                            </li>
+                            <li><span></span><a class="passwordSubmit lj-btn">保存修改</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div th:replace="common :: footer"></div>
+<script type="text/javascript" src="/static/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/lib/layui/layui.js"></script>
+<script type="text/javascript" src="/static/js/center.js"></script>
+</body>
+</html>

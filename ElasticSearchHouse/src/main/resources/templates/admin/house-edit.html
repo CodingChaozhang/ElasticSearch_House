@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:include="admin/common :: head"></div>
+    <link rel="stylesheet" type="text/css" href="/static/lib/webuploader/0.1.5/webuploader.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/admin/house-edit.css">
+    <title>编辑房源</title>
+</head>
+<body>
+<div>
+    <content class="page-container">
+        <form class="form form-horizontal" id="form-house-edit" th:object="${house}">
+            <input name="id" type="hidden" th:value="*{id}">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>大标题：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="标题信息" id="title"
+                           name="title" th:value="*{title}">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>市：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <span class="select-box" style="widows: 0;">
+                        <select class="select" name="cityEnName" id="city">
+                            <option value="" th:value="${city.enName}">
+                                <span th:text="${city.cnName}"></span>
+                            </option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>区/县：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <span class="select-box" style="widows: 0;">
+                        <select class="select" name="regionEnName" id="region">
+                            <option value="" th:value="${region.enName}">
+                                <span th:text="${region.cnName}"></span>
+                            </option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>所在街道：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" th:value="*{street}" placeholder="" id="street" name="street">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>所在小区：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" th:value="*{district}" placeholder="所在小区"
+                           id="district" name="district">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>地址：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="详细地址" id="detailAddress"
+                           name="detailAddress" th:value="*{houseDetail.address}">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>卧室数量：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" th:value="*{room}" placeholder="详细地址" id="room"
+                           name="room">
+                </div>
+
+                <label class="form-label col-xs-4 col-sm-2">客厅数量：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" th:value="*{parlour}" placeholder="详细地址" id="parlour"
+                           name="parlour">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>房间朝向：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <span class="select-box" style="widows: 0;">
+				        <select name="direction" class="select">
+                            <option th:selected="*{direction == 1}" value="1">朝东</option>
+                            <option th:selected="*{direction == 2}" value="2">朝南</option>
+                            <option th:selected="*{direction == 3}" value="3">朝西</option>
+                            <option th:selected="*{direction == 4}" value="4">朝北</option>
+                            <option th:selected="*{direction == 5}" value="5">南北</option>
+                        </select>
+				    </span>
+                </div>
+
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>建筑时间：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text"
+                           onfocus="WdatePicker({ dateFmt:'yyyy',maxDate:'#F{$dp.$D(\'buildYear\')||\'%y\'}' })"
+                           id="buildYear" name="buildYear" class="input-text Wdate" th:value="*{buildYear}">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>所在楼层：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" th:value="*{floor}" placeholder="所在楼层" id="floor"
+                           name="floor">
+                </div>
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>总楼层：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" th:value="*{totalFloor}" placeholder="总楼层" id="totalFloor"
+                           name="totalFloor">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>面积：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" value="0" placeholder="" id="area" name="area"
+                           th:value="*{area}">
+                </div>
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>定价：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" value="0" placeholder="" id="price" name="price"
+                           th:value="*{price}">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">租赁方式：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <span class="select-box" style="widows: 0;">
+				        <select name="rentWay" class="select" th:selected="*{houseDetail.rentWay}">
+                            <option value="0">整租</option>
+                            <option value="1">合租</option>
+                        </select>
+				    </span>
+                </div>
+                <label class="form-label col-xs-4 col-sm-2">地铁线路：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <span class="select-box" style="widows: 0;">
+				        <select name="subwayLineId" class="select" id="subwayLine">
+                            <option th:value="${subway != null} ? ${subway.id} : ''">
+                                <span th:text="${subway != null} ? ${subway.name} : '请选择'"></span>
+                            </option>
+                        </select>
+				    </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">地铁站：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <span class="select-box" style="widows: 0;">
+				        <select name="subwayStationId" class="select" id="subwayStation">
+                            <option th:value="${station != null} ? ${station.id} : ''">
+                                <span th:text="${station != null} ? ${station.name} : '请选择'"></span>
+                            </option>
+                        </select>
+				    </span>
+                </div>
+                <label class="form-label col-xs-4 col-sm-2">距地铁距离：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" value="-1" placeholder="" id="distanceToSubway"
+                           name="distanceToSubway" th:value="${house.distanceToSubway}">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">标签</label>
+                <div id="tags" class="formControls col-xs-8 col-sm-9">
+                    <span class="label label-default">集体供暖</span>
+                    <span class="label label-default">独立阳台</span>
+                    <span class="label label-default">光照充足</span>
+                    <span class="label label-default">独立卫生间</span>
+                    <span class="label label-default">空调</span>
+                    <span class="label label-default">精装修</span>
+                    <span class="label label-default">随时看房</span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">户型介绍：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="房屋整体户型的相关介绍"
+                           id="layoutDesc" name="layoutDesc" th:value="*{houseDetail.layoutDesc}">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">交通出行：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="周边的交通设施"
+                           id="traffic" name="traffic" th:value="*{houseDetail.traffic}">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">周边配套：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="周边的服务配套设施，如学校、医院等"
+                           id="roundService" name="roundService" th:value="*{houseDetail.roundService}">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">房屋描述：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="description" cols="" rows="" class="textarea" placeholder="说点什么..."
+                          datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！"
+                          th:text="*{houseDetail.description}"></textarea>
+                    <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2" style="width: 18%">已上传图片：</label>
+                <div class="uploaded-list-container ">
+                    <tr th:each="picture: ${house.pictures}">
+                        <a th:href="${picture.cdnPrefix} + ${picture.path}">
+                            <img th:src="${picture.cdnPrefix} + ${picture.path}" width="150" height="100">
+                            <input type="hidden" th:value="${picture.id}">
+                        </a>
+                    </tr>
+                </div>
+            </div>
+
+            <div class="uploader-list-container" style=" width: 60%; height: 30%; position: relative;
+                margin-left:17%;">
+                <div class="queueList">
+                    <div id="dndArea" class="placeholder">
+                        <div id="filePicker-2"></div>
+                        <p>或将照片拖到这里，单次最多可选5张</p>
+                    </div>
+                </div>
+                <div class="statusBar" style="display:none;">
+                    <div class="progress"><span class="text">0%</span> <span class="percentage"></span></div>
+                    <div class="info"></div>
+                    <div class="btns">
+                        <div id="filePicker2"></div>
+                        <div class="uploadBtn">开始上传</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">封面：</label>
+                <div id="upload-cover-container" class="formControls col-xs-8 col-sm-9">
+                    <!-- 封面列表 -->
+                    <span>请先上传图片，从中选择封面</span>
+                </div>
+                <!--<input id="cover" type="hidden" value=""/>-->
+            </div>
+
+            <div class="upload-photo-ids-container">
+                <!--这里放上传OK图片的信息 在表单中一起上传-->
+            </div>
+
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                    <button class="btn btn-primary radius" type="submit"><i
+                            class="Hui-iconfont">&#xe632;</i> 更新
+                    </button>
+                    <!--<button onClick="layer_close();" class="btn btn-default radius"-->
+                    <button onClick="removeIframe();" class="btn btn-default radius"
+                            type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;
+                    </button>
+                </div>
+            </div>
+        </form>
+    </content>
+</div>
+
+<footer th:include="admin/common :: footer"></footer>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/static/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/static/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/static/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/static/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="/static/js/admin/upload.js"></script>
+<script type="text/javascript" src="/static/js/admin/house-common.js"></script>
+<script type="text/javascript" src="/static/js/admin/house-edit.js"></script>
+<script th:inline="javascript">
+    var tags = [[${house.tags}]];
+    var tagSpans = $('#tags span');
+    tagSpans.each(function () {
+        var val = $(this).text();
+        if (tags.indexOf(val) != -1) {
+            $(this).removeClass('label-default').addClass('label-success').css('border', 'solid 1px black');
+        }
+    });
+
+    tagSpans.on('click', function () {
+        var tagSpan = $(this);
+        if ($(this).hasClass('label-success')) {
+            $.ajax({
+                url: '/admin/house/tag?house_id=' + [[${house.id}]] + '&tag=' + $(this).text(),
+                type: 'DELETE',
+                success: function (data) {
+                    if (data.code === 200) {
+                        tagSpan.removeClass('label-success').addClass('label-default').css('border', 'none');
+                        layer.msg('已移除该标签!', {icon: 6, time: 1000});
+                    } else {
+                        layer.msg(data.message, {icon: 5, time: 1000});
+                    }
+                },
+                error: function (request, status, error) {
+                    layer.msg('操作失败！Server response: ' + request.responseText, {icon: 5, time: 3000});
+                }
+            });
+        } else {
+            $.ajax({
+                url: '/admin/house/tag',
+                type: 'POST',
+                data: {
+                    'house_id': [[${house.id}]],
+                    'tag': $(this).text()
+                },
+                success: function (data) {
+                    if (data.code === 200) {
+                        tagSpan.removeClass('label-default').addClass('label-success').css('border', 'solid 1px black');
+                        layer.msg('已添加该标签!', {icon: 6, time: 1000});
+                    } else {
+                        layer.msg(data.message, {icon: 5, time: 1000});
+                    }
+                },
+                error: function (xhr, status, error) {
+                    layer.msg('操作失败! Server response: ' + xhr.responseText, {icon: 5, time: 3000});
+                }
+            });
+        }
+
+    });
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

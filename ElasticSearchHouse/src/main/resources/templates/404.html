@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>oops 404 for Website Template for free | Home :: w3layouts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="/static/css/main.css" rel='stylesheet' type='text/css'/>
+    <link href="/static/css/index.css" rel='stylesheet' type='text/css'/>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            background: #eaeaea;
+        }
+
+        .wrap {
+            margin-top: 100px;
+        }
+
+        .wrap .logo {
+            text-align: center;
+            height: 390px;
+        }
+
+        .wrap .logo img {
+            width: 350px;
+        }
+
+        .wrap .logo p {
+            color: #272727;
+            font-size: 40px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .sub a {
+            color: #fff;
+            background: #272727;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-family: arial, serif;
+            font-weight: bold;
+            -webkit-border-radius: .5em;
+            -moz-border-radius: .5em;
+            -border-radius: .5em;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="wrap container">
+    <div class="logo">
+        <p>OOPS! - Could Not Find it</p>
+        <img src="/static/images/404.png"/>
+        <div class="sub">
+            <p><a href="/">返回首页</a></p>
+        </div>
+    </div>
+</div>
+
+<div th:replace="common :: footer">footer</div>
+
+</body>
+</html>

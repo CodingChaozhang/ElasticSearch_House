@@ -1,0 +1,12 @@
+.upload-cover-container div {
+    float: left;
+    margin: 2px;
+    padding: 2px;
+    border: 1px dashed;
+    width: 120px;
+    height: 100px;
+}
+
+.upload-cover-container input {
+    margin-left: 5px;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<div th:fragment="head">
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/common.css" rel='stylesheet' type='text/css'/>
+</div>
+
+<header th:fragment="header" class="xunwu-header">
+    <div class="nav-wrap">
+        <div class="wrapper ">
+            <div class="fl">
+                <a class="logo" href="/" title="寻屋">
+                    <!--<img src="/static/images/logo.png">-->
+                </a>
+            </div>
+            <div class="fr nav">
+                <div class="fl">
+                    <ul>
+                        <li>
+                            <a class="index-page" href="/">首页</a>
+                        </li>
+                        <li>
+                            <a class="rent-page" href="/rent/house">租房</a>
+                        </li>
+                        <li>
+                            <a class="center-page" href="/user/center">个人中心</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fr login">
+                    <div class="ti-hover">
+                        <div class="login-panel typeUserInfo">
+                            <div th:if="${session==null || session.SPRING_SECURITY_CONTEXT==null}">
+                                <span class="welcome">
+                                    <a class="btn-register" href="/user/login"
+                                       rel="nofollow"><span class="log">免注册登录</span></a>
+                                    <!--|<a class="btn-login bounceIn actLoginBtn" href="/user/login"><span-->
+                                            <!--class="reg">登录</span></a>-->
+                                </span>
+                            </div>
+
+                            <div th:if="${session!=null && session.SPRING_SECURITY_CONTEXT!=null}">
+                                <a href="/user/center">
+                                    <span th:text="${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}">
+                                        用户名
+                                    </span>
+                                </a>
+                                <span id="indexTipContainer"></span>
+                                <span class="welcome">
+                                    <a class="reg" href="/logout" rel="nofollow">退出</a></span>
+                            </div>
+                        </div>
+                        <div class="user-news" id="userNews">
+                            <!-- TODO 用户消息 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div th:fragment="footer">
+    <div class="footer">
+        <div class="wrapper">
+            <div class="f-title">
+                <div class="fl">
+                    <ul>
+                        <li><a href="/" rel="nofollow" target="_blank">首页</a></li>
+                        <li><a href="/" rel="nofollow" target="_blank">了解寻屋</a></li>
+                        <li><a href="/" rel="nofollow" target="_blank">关于寻屋</a></li>
+                        <li><a href="/" rel="nofollow" target="_blank">联系客服</a></li>
+                        <li><a href="/admin/login" rel="nofollow" target="_blank">管理员登录</a></li>
+                    </ul>
+                </div>
+                <div class="fr">官方客服 xxxx-xxxx-xxxx</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="bottom">
+            <div class="copyright fl">Copyright &copy; 2017. CodingChaozhang All rights reserved.</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://localhost:8080/static/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/lib/layer/2.4/layer.js"></script>
+    <script type="text/javascript" src="/static/js/common.js"></script>
+</div>
+</html>

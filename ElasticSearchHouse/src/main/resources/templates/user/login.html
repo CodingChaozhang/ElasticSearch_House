@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="/static/css/common.css" rel='stylesheet' type='text/css'/>
+    <link href="/static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/lib/layui/layui.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/static/css/user/login.css">
+</head>
+<body>
+<div class="xunwu-container">
+    <!--<header class="xunwu-header">-->
+    <!--<h1>寻屋</h1>-->
+    <!--</header>-->
+
+    <div class="login-form form-bg" style="padding: 90px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    <form class="form-horizontal" action="#" th:action="@{/login}" method="post">
+                        <div class="heading">
+                            <a><span class="select" data-bind="phone">免密登录&nbsp;&nbsp;&nbsp;</span></a>|
+                            <a><span class="" data-bind="password">&nbsp;&nbsp;&nbsp;密码登录</span></a>
+                        </div>
+                        <span class="error-message" style="color: red;">
+                        </span>
+                        <div class="phone-panel">
+                            <div class="form-group">
+                                <input name="telephone" type="tel" class="form-control phone" id="phone"
+                                       placeholder="手机号">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="form-group help">
+                                <input name="smsCode" type="text" class="form-control password" id="validateCode"
+                                       placeholder="6位验证码">
+                                <i class="fa fa-lock"></i>
+                                <!--<a href="#" class="fa fa-question-circle"></a>-->
+                                <button id="smsCodeBtn" type="button" class="valide-code btn btn-default">获取验证码
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="password-panel" style="display: none;">
+                            <!--<span class="heading">免注册登录</span>-->
+                            <div class="form-group">
+                                <input name="username" type="text" class="form-control username" id="nameOrPhone"
+                                       placeholder="用户名/手机号">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="form-group help">
+                                <input name="password" type="password" class="form-control code" id="password"
+                                       placeholder="密码">
+                                <i class="fa fa-lock"></i>
+                                <!--<a href="#" class="fa fa-question-circle"></a>-->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!--<div class="main-checkbox">-->
+                            <!--<input type="checkbox" value="None" id="checkbox1" name="check"/>-->
+                            <!--<label for="checkbox1"></label>-->
+                            <!--</div>-->
+                            <!--<span class="text">Remember me</span>-->
+                            <button id="submit-btn" type="submit" class="btn btn-default">登录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="common :: footer"></div>
+<script type="text/javascript" src="/static/lib/layui/layui.js"></script>
+<script th:inline="javascript">
+    $(function () {
+        var authError = [[${param.authError}]];
+        var smsCodeError = [[${param.smsCodeError}]];
+
+        var phoneTip = $('.heading span[data-bind="phone"]'),
+            passwordTip = $('.heading span[data-bind="password"]');
+        if (authError) {
+            activeNamePanel();
+            $('.login-form .error-message').text('用户名或密码不正确');
+
+        } else if (smsCodeError) {
+            activePhonePanel();
+            $('.login-form .error-message').text('验证码错误');
+        }
+
+        $('.login-form .heading span').on('click', function () {
+            var bind = $(this).attr('data-bind');
+            if (bind === 'phone') {
+                activePhonePanel();
+            } else {
+                activeNamePanel();
+            }
+        });
+
+        function activePhonePanel() {
+            var phonePanel = $('.login-form .phone-panel'),
+                passwordPanel = $('.login-form .password-panel');
+            phoneTip.addClass('select');
+            passwordTip.removeClass('select');
+            phonePanel.css('display', 'block');
+            passwordPanel.css('display', 'none');
+        }
+
+        function activeNamePanel() {
+            var phonePanel = $('.login-form .phone-panel'),
+                passwordPanel = $('.login-form .password-panel');
+            passwordTip.addClass('select');
+            phoneTip.removeClass('select');
+            passwordPanel.css('display', 'block');
+            phonePanel.css('display', 'none');
+        }
+
+        $('#submit-btn').on('click', function () {
+            var bind = $('.login-form .heading span.select').attr('data-bind');
+
+            if (bind === 'phone') {
+                var telephone = $('.login-form form').find('input[name="telephone"]').val(),
+                    phonePattern = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
+                var n = telephone.search(phonePattern);
+                if (n < 0) {
+                    layer.msg('请输入正确的手机号', {icon: 5, time: 2000});
+                    return false;
+                }
+
+                var smsCode = $('.login-form form').find('input[name="smsCode"]').val();
+                if (smsCode.length !== 6) {
+                    layer.msg('请输入4位验证码', {icon: 5, time: 2000});
+                    return false;
+                }
+            } else {
+                var username = $('.login-form form').find('input[name="username"]').val();
+                if (username.length < 1) {
+                    layer.msg('请输入用户名/手机号', {icon: 5, time: 2000});
+                    return false;
+                }
+                var password = $('.login-form form').find('input[name="password"]').val();
+                if (password.length < 1) {
+                    layer.msg('请输入密码', {icon: 5, time: 2000});
+                    return false;
+                }
+
+            }
+
+            return true;
+        });
+
+        $('#smsCodeBtn').on('click', function () {
+            var telephone = $('.login-form form').find('input[name="telephone"]').val(),
+                phonePattern = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
+            var n = telephone.search(phonePattern);
+            if (n < 0) {
+                layer.msg('请输入正确的手机号', {icon: 5, time: 2000});
+                return false;
+            }
+
+            $(this).attr('readonly', 'readonly');
+
+            $.ajax({
+                url: '/sms/code?telephone=' + telephone,
+                type: 'GET',
+                success: function (data) {
+                    if (data.code === 200) {
+                        var smsBtn = $('#smsCodeBtn');
+                        smsBtn.attr('disabled', 'disabled');
+                        smsBtn.css("background-color", "#b4b2b3");
+
+                        var time = 60;
+                        var clock = setInterval(function () {
+                            if (time-- <= 0) {
+                                smsBtn.removeAttr('disabled');
+                                smsBtn.css('background-color', '#00b4ef');
+                                smsBtn.text('获取验证码');
+                                clearInterval(clock);
+                            } else {
+                                smsBtn.text(time + 's 重新发送');
+                            }
+                        }, 1000);
+                        layer.msg('获取验证码成功', {icon: 6, time: 2000});
+                    } else {
+                        layer.msg('获取失败: ' + data.message, {icon: 5, time: 2000});
+                    }
+                },
+                error: function (xhr, response, error) {
+                    layer.msg('服务器错误: ' + response, {icon: 5, time: 2000});
+                }
+            });
+        });
+
+    });
+
+</script>
+</body>
+</html>

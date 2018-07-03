@@ -1,0 +1,386 @@
+.left-region {
+    height: 620px;
+    float: left;
+    width: 376px;
+}
+
+.left-region .r-hd {
+    background-color: #fafafa;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 14px;
+    font-weight: 800
+}
+
+.left-region .r-hd .r-hd_i {
+    color: #e4393c;
+    padding-left: 4px;
+    padding-right: 4px
+}
+
+.left-region .r-hd2 {
+    border-bottom: 1px solid #bcbcbc;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fbfbfb
+}
+
+.left-region .r-hd2 ol {
+    overflow: hidden;
+    padding-left: 12px
+}
+
+.left-region .r-hd2 li {
+    float: left;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    cursor: pointer
+}
+
+.left-region .r-hd2 .desc {
+    display: none
+}
+
+.left-region .r-hd2 .s-station {
+    display: none
+}
+
+.left-region .r-hd2 .s-desc .desc {
+    display: inline
+}
+
+.left-region .r-hd2 .s-desc .asc {
+    display: none
+}
+
+.left-region .r-hd2 .on {
+    border-color: #bcbcbc;
+    background-color: #fff;
+    border-bottom-color: #fff;
+    cursor: default
+}
+
+.left-region .r-hd2 .s-price.on, .left-region .r-hd2 .s-area.on {
+    cursor: pointer
+}
+
+.left-region .r-hd3 {
+    border-bottom: 1px solid #e4e4e4;
+    padding-left: 40px;
+    display: none;
+    position: relative
+}
+
+.left-region .r-hd3 .r-hd3-bg {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: #3c96e6;
+    top: 22px;
+    left: 20px
+}
+
+.left-region .r-hd3-content {
+    height: 80px;
+}
+
+.left-region .r-hd3 .r-hd3-bg .r-hd3-cycle {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background: #fff;
+    position: absolute;
+    left: 7px;
+    top: 4px
+}
+
+.left-region .r-hd3 .r-hd3-bg .r-hd3-cycle div {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #3c96e6;
+    border-radius: 3px;
+    left: 3px;
+    top: 3px
+}
+
+.left-region .r-hd3 .r-hd3-bg .r-hd3-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-width: 7px;
+    border-top-color: #fff;
+    top: 13px;
+    left: 8px
+}
+
+.left-region .r-hd3 .i-card {
+    overflow: hidden;
+    font-size: 12px;
+    color: #aaaaaa;
+    padding: 15px 20px 12px
+}
+
+.left-region .r-hd3 .i-card li {
+    float: left;
+    width: 140px;
+    margin-right: 16px;
+    height: 22px;
+    overflow: hidden;
+    line-height: 22px;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.left-region .r-hd3 .i-card .i-card-name {
+    font-size: 18px;
+    color: #262626;
+    font-weight: 800
+}
+
+.left-region .r-hd3 .i-card .i-card-name a {
+    font-size: 18px;
+    color: #262626;
+    font-weight: 800
+}
+
+.left-region .r-hd3 .i-card .i-card-price {
+    color: #e4393c;
+    width: 164px;
+    margin-right: 0
+}
+
+.left-region .r-hd3 .i-card .i-card-price span {
+    font-size: 18px;
+    font-weight: 800
+}
+
+.left-region .r-hd3 .i-card .i-card-radio {
+    width: 164px;
+    margin-right: 0;
+    display: none
+}
+
+.left-region .r-hd3 .i-card-5 .i-card-radio {
+    display: none
+}
+
+.left-region .r-container {
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 500px
+}
+
+.left-region .r-content .list-item {
+    border-bottom: 1px solid #e4e4e4
+}
+
+.left-region .r-content .list-item a {
+    display: block;
+    width: 345px;
+    padding: 5px 3px;
+    color: #555555;
+    font-size: 12px;
+    position: relative;
+    background-color: #ffffff;
+    -webkit-transition: background-color .15s ease-in-out;
+    transition: background-color .15s ease-in-out
+}
+
+.left-region .r-content .list-item a:hover {
+    background-color: #fbfbfb
+}
+
+.left-region .r-content .list-item a .item-aside {
+    float: left;
+    width: 116px;
+    height: 116px;
+    margin-right: 18px;
+    border-bottom: 4px solid transparent
+}
+
+.left-region .r-content .list-item a .item-aside img {
+    width: 100%;
+    height: 100%
+}
+
+.left-region .r-content .list-item a .item-aside .item-btm {
+    height: 22px;
+    background-color: #494848;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    line-height: 22px;
+    overflow: hidden;
+    margin-top: -22px;
+    margin-left: 0;
+    position: absolute;
+    z-index: 2
+}
+
+.left-region .r-content .list-item a .item-aside .item-btm .item-img-icon {
+    border: 2px solid #fff;
+    height: 8px;
+    width: 8px;
+    margin-left: 5px;
+    float: left;
+    margin-top: 5px;
+    padding: 0
+}
+
+.left-region .r-content .list-item a .item-aside .item-btm .item-img-icon .i-icon-arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+    border-width: 3px 3px 4px 5px;
+    border-bottom-color: #fff
+}
+
+.left-region .r-content .list-item a .item-aside .item-btm .item-img-icon .i-icon-dot {
+    display: block;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    margin-top: -6px;
+    margin-left: 1px
+}
+
+.left-region .r-content .list-item a .item-aside .item-btm span {
+    float: left;
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px
+}
+
+.left-region .r-content .list-item a .item-aside .item-top {
+    position: absolute;
+    top: 22px;
+    padding: 5px 7px;
+    font-size: 12px;
+    background-color: #fcb846;
+    color: #fff
+}
+
+.left-region .r-content .list-item a .item-main .item-tle {
+    font-size: 14px;
+    color: #262626;
+    font-weight: 800;
+    height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.36
+}
+
+.left-region .r-content .list-item a .item-main .item-tip_new, .left-region .r-content .list-item a .item-main .item-tip_decrease {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 400;
+    background-color: #e23b41;
+    margin-left: 4px;
+    border-radius: 1px;
+    padding: 2px
+}
+
+.left-region .r-content .list-item a .item-main .item-tip_decrease {
+    background-color: #45ac71
+}
+
+.left-region .r-content .list-item a .item-main .item-des {
+    white-space: nowrap;
+    position: relative;
+    margin-top: 2px;
+    line-height: 1.84
+}
+
+.left-region .r-content .list-item a .item-main .item-des span {
+    margin-right: 5px
+}
+
+.left-region .r-content .list-item a .item-main .item-des .item-side {
+    margin-right: 0;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    color: #e4393c;
+    font-weight: 800;
+    font-family: tahoma
+}
+
+.left-region .r-content .list-item a .item-main .item-des .item-side span {
+    font-size: 12px;
+    font-weight: normal;
+    margin-left: 2px;
+    margin-right: 0
+}
+
+.left-region .r-content .list-item a .item-main .item-community .item-replace-com {
+    display: none
+}
+
+.left-region .r-content .list-item a .item-main .item-tag-wrap {
+    margin-top: 3px;
+    min-height: 29px
+}
+
+.left-region .r-content .list-item a .item-main .item-extra {
+    display: inline-block;
+    border: 1px solid;
+    margin-right: 6px;
+    padding: 1px 6px 2px;
+    margin-top: 6px
+}
+
+.left-region .r-content .list-item a .item-main .item-tag-color_1 {
+    color: #2973b3
+}
+
+.left-region .r-content .list-item a .item-main .item-tag-color_2 {
+    color: #ff7800
+}
+
+.left-region .r-content .list-item a .item-main .item-tag-color_3 {
+    color: #fcb846
+}
+
+.left-region .r-content .list-item a .item-main .item-tag-color_4 {
+    color: #9ec77d
+}
+
+.left-region .r-content .list-item a:hover {
+    text-decoration: none
+}
+
+.left-region .r-content .list-item a:hover .item-main .item-community .item-exact-com {
+    display: none
+}
+
+.left-region .r-content .list-item a:hover .item-main .item-community .item-replace-com {
+    display: inline
+}
+
+.left-region .r-content .list-item-remind {
+    font-size: 18px;
+    text-align: center;
+    line-height: 400px;
+    color: #888888;
+    background: url(/static/images/list404.png) no-repeat center 90px
+}
+
+
+
+#allmap {
+    width: 900px;
+    height: 620px;
+    overflow: hidden;
+    margin: 0;
+    font-family: "微软雅黑";
+    float: right;
+}
+

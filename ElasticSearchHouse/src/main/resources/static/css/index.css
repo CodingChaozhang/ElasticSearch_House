@@ -1,0 +1,96 @@
+.msgTip {
+    font-size: x-large;
+    margin: 80px;
+    text-align: center;
+}
+
+.city-change .fc-main {
+    padding: 0 40px;
+    height: 335px;
+    overflow-y: auto
+}
+
+.city-change .fc-main .citys-l {
+    width: 50%;
+    height: 100%
+}
+
+.city-change .fc-main .citys-r {
+    width: 50%;
+    height: 100%
+}
+
+.city-change .fc-main ul {
+    display: inline-block
+}
+
+.city-change .fc-main li {
+    line-height: 41px
+}
+
+.city-change .fc-main li .code-title {
+    display: inline-block;
+    width: 12px;
+    margin-right: 10px;
+    color: #999999
+}
+
+.city-change .fc-main li .city-enum {
+    max-width: 250px
+}
+
+.city-change .fc-main li .city-enum a {
+    margin-left: 7px;
+    display: inline-block;
+    color: #333333
+}
+
+.city-change .fc-main li .city-enum a:hover {
+    color: #00b064
+}
+
+.city-change .title-line {
+    /*width: 590px;*/
+    height: 1px;
+    background-color: #eeeeee;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 10px
+}
+
+.city-change .title {
+    text-align: left;
+    margin: 30px 40px 0 40px;
+    font-size: 22px;
+    color: #394043;
+    font-weight: bold;
+    position: relative
+}
+
+.city-change .title .city-tab {
+    display: inline-block;
+    /*float: right*/
+}
+
+.city-change .title .city-tab span {
+    font-size: 14px;
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 9px;
+    color: #999999
+}
+
+.city-change .title .city-tab a {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 10px;
+    color: #394043
+}
+
+.city-change .title .city-tab a:hover {
+    color: #00b064
+}
+
+.clear {
+    display: block;
+}

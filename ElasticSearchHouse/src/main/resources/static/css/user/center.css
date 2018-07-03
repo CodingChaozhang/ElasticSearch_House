@@ -1,0 +1,211 @@
+.fr {
+    float: right;
+}
+
+.user-body {
+    /*height: 430px;*/
+    padding: 20px 0;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.user-body .user-left {
+    border: 1px solid #e6e5e5;
+    width: 150px;
+    padding: 35px 0 9px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.user-body .user-left .avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.user-body .user-left .user-name {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.user-body .user-left ul li.hover {
+    background-color: #0054a5;
+}
+
+.user-body .user-left ul li.hover a {
+    color: #fff;
+}
+
+.user-body .user-left ul li {
+    width: 152px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    left: -1px;
+}
+
+.user-body .user-left ul li a {
+
+    width: 82px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 18px;
+    color: #555;
+}
+
+.user-body .user-right {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #e6e5e5;
+    width: 755px;
+    height: 410px;
+}
+
+.user-body .user-right .content {
+    overflow-x: scroll;
+    height: 340px;
+}
+
+.user-body .user-right .title {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+.user-body .user-right .tab {
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid #e6e6e6;
+    overflow: hidden;
+}
+
+.user-body .user-right .tab span {
+    float: left;
+    padding: 0 25px;
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+}
+
+.user-body .user-right .tab span.hover {
+    background-color: #e6e5e5;
+    display: inline-block;
+    height: 38px;
+    color: #333;
+    cursor: default;
+}
+
+.split-line {
+    height: 3px;
+    border: none;
+    border-top: 3px double #0054a5;
+}
+
+.user-right .right-body {
+    display: none;
+}
+
+.user-right .right-body.on {
+    display: block;
+}
+
+.user-right .edit-info .modify-tab div {
+    display: none;
+}
+
+.user-right .edit-info .modify-tab div.on {
+    display: block;
+}
+
+.user-right .content li {
+    padding-bottom: 3px;
+    height: 90px;
+}
+
+.user-right  .info {
+    margin-left: 35px;
+    width: 390px;
+    height: 90px;
+}
+
+.user-right .right-body a {
+    color: #394043;
+}
+
+.user-right .right-body .info .line {
+    color: #cecece;
+}
+
+.user-right .wait-record .info button {
+    width: 70px;
+    height: 25px;
+    color: white;
+    background-color: #0054a5;
+    cursor: pointer;
+}
+
+.user-right  .info>a h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #394043;
+    line-height: 22px;
+    max-width: 390px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.user-right .blue-btn {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+.user-right .blue-btn button {
+    background-color: #0054a5;
+    color: white;
+    border: 1px solid #271172;
+    cursor: pointer;
+}
+
+.user-right .edit-info .change-pwd {
+    width: 350px;
+    margin: 40px auto;
+}
+
+.user-right .edit-info .change-pwd li {
+    padding-top: 15px;
+    height: 35px;
+}
+
+.user-right .edit-info .change-pwd span {
+    width: 95px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.user-right .edit-info .change-pwd input {
+    width: 237px;
+    height: 38px;
+    border: 1px solid #c8c8c8;
+}
+
+.user-right .edit-info .change-pwd .lj-btn {
+    width: 228px;
+    height: 40px;
+    padding: 0 5px;
+    background-color: #0054a5;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    display: inline-block;
+    margin-left: 4px;
+}

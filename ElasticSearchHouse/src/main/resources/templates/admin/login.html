@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>寻屋-后台登录系统</title>
+
+    <!--- CSS --->
+    <link rel="stylesheet" href="/static/css/admin/login-style.css" type="text/css" />
+
+
+    <!--- Javascript libraries (jQuery and Selectivizr) used for the custom checkbox --->
+
+    <!--[if (gte IE 6)&(lte IE 8)]>
+    <script type="text/javascript" src="/static/lib/jquery/1.9.1/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/admin/selectivizr.js"></script>
+    <noscript><link rel="stylesheet" href="/static/css/admin/login-fallback.css" /></noscript>
+    <![endif]-->
+
+</head>
+
+<body>
+<div id="container">
+    <form action="#" th:action="@{/login}" method="post">
+        <div class="login">管理员登录</div>
+        <div th:if="${param.error}" style="position: absolute; color: red; padding-top: 6%; padding-left: 3%">
+            非法的用户名或密码
+        </div>
+        <div class="username-text">用户名:</div>
+        <div class="password-text">密码:</div>
+        <div class="username-field">
+            <input type="text" name="username" placeholder="请输入用户名"/>
+        </div>
+        <div class="password-field">
+            <input type="password" name="password" placeholder="请输入密码" />
+        </div>
+
+
+        <!--<input type="checkbox" name="remember-me" id="remember-me" /><label for="remember-me">Remember me</label>-->
+        <!--<div class="forgot-usr-pwd">Forgot <a href="#">username</a> or <a href="#">password</a>?</div>-->
+
+        <div class="login-button">
+            <button type="submit" class="login_button">登录</button>
+        </div>
+    </form>
+</div>
+<div id="footer">
+    寻屋-后台管理系统 <a href="#" target="_blank" title="登录"></a>
+</div>
+</body>
+</html>

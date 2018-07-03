@@ -1,0 +1,369 @@
+/* -------------------------------------------------------
+
+	Description: Web 2.0 Login Form
+	Version: 1.0
+	Author: Anli Zaimi
+	Author URI: http://azmind.com
+
+------------------------------------------------------- */
+
+
+/* ------- This is the CSS Reset ------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, 
+abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr,
+th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu,
+nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* ------- HTML5 display-role reset for older browsers ------- */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ------- Remove Chrome's border around active fields ------- */
+
+*:focus {
+	outline: none;
+}
+
+/* ------- Disable background and border for input fields ------- */
+
+input {
+	background: transparent;
+	border: 0;
+}
+
+
+
+/* --------------------------------------------------------------- */
+
+/* ------- Body ------- */
+
+body {
+	background: #eeeeee url(../../images/admin/bg.jpg) top left repeat;
+}
+
+
+/* ------- Container ------- */
+
+#container {
+	margin: auto;
+	margin-top: 180px;
+	width: 524px;
+	height: 262px;
+	text-align: left;
+	font-family: Verdana, Arial;
+	font-weight: normal;
+	font-size: 12px;
+	color: #ffffff;
+}
+
+
+/* ------- Login Form ------- */
+
+form, .welcome {
+	background: url(../../images/admin/form-bg.png) top left no-repeat;
+	width: 524px;
+	height: 262px;
+	padding-top: 1px;
+}
+
+.login, .welcome-user {
+	width: 470px;
+	float: left;
+	margin-top: 33px;
+	margin-left: 40px;
+	font-size: 20px;
+}
+
+.username-text {
+	width: 190px;
+	float: left;
+	margin-top: 50px;
+	margin-left: 40px;
+}
+
+.password-text {
+	width: 290px;
+	float: left;
+	margin-top: 50px;
+	margin-left: 0px;
+}
+
+.welcome-text {
+	width: 360px;
+	float: left;
+	margin-top: 50px;
+	margin-left: 40px;
+	line-height: 16px;
+}
+
+.username-field {
+	width: 168px;
+	height: 38px;
+	float:left;
+	margin-top: 10px;
+	margin-left: 35px;
+	background: url(../../images/admin/username-field.png) center left no-repeat;
+}
+
+.username-field:hover {
+	background: url(../../images/admin/username-field-hover.png) center left no-repeat;
+}
+
+.password-field {
+	width: 280px;
+	height: 38px;
+	float:left;
+	margin-top: 10px;
+	margin-left: 22px;
+	background: url(../../images/admin/password-field.png) center left no-repeat;
+}
+
+.password-field:hover {
+	background: url(../../images/admin/password-field-hover.png) center left no-repeat;
+}
+
+input[type="text"], input[type="password"] {
+	width: 120px;
+	height: 16px;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-family: Verdana, Arial;
+	font-size: 16px;
+	color: #2d2d2d;
+}
+
+/* ------------ Custom Checkbox ------------------------------- */
+
+/* Works for browsers with CSS3 support (with or without Javascript) */
+/* Works for Internet Explorer 6-8 (without CSS3 support) with Javascript */
+/* If Javascript isn't available this doesn't work for Internet Explorer 6-8 */
+
+input[type="checkbox"] {
+	position: absolute;
+	left: -999px;
+}
+
+input[type="checkbox"] + label {
+	width: 132px;
+	height: 24px;
+	float: left;
+	margin-top: 26px;
+	margin-left: 37px;
+	padding-left: 28px;
+	display: block;
+	position: relative;
+	line-height: 24px;
+	background: url(../../images/admin/checkbox-off.png) top left no-repeat;
+}
+
+input[type="checkbox"]:checked + label {
+	background: url(../../images/admin/checkbox-on.png) top left no-repeat;
+}
+
+input[type="checkbox"]:checked:hover + label, input[type="checkbox"]:checked:focus + label {
+	background: url(../../images/admin/checkbox-on-hover.png) top left no-repeat;
+}
+
+input[type="checkbox"]:not(:checked):hover + label, input[type="checkbox"]:not(:checked):focus + label {
+	background: url(../../images/admin/checkbox-off-hover.png) top left no-repeat;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.forgot-usr-pwd {
+	width: 220px;
+	float: left;
+	margin-top: 26px;
+	margin-left: 0;
+	color: #cccccc;
+	line-height: 24px;
+}
+
+.forgot-usr-pwd a {
+	color: #cccccc;
+	text-decoration: none;
+	font-style: italic;
+}
+
+.forgot-usr-pwd a:hover, .forgot-usr-pwd a:focus {
+	text-decoration: underline;
+}
+
+input[type="submit"] {
+	width: 95px;
+	height: 73px;
+	float: left;
+	margin-top: 12px;
+	margin-left: 2px;
+	font-family: Verdana, Arial;
+	font-size: 26px;
+	color: #ffffff;
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus {
+	background: url(../../images/admin/go-hover.png) top left no-repeat;
+}
+
+.home {
+	width: 70px;
+	height: 73px;
+	float: left;
+	margin-top: 122px;
+	margin-left: 21px;
+	font-size: 20px;
+	padding: 25px 0 0 15px;
+}
+
+.home:hover, .home:focus {
+	background: url(../../images/admin/go-hover.png) top left no-repeat;
+}
+
+.home a, .home a:hover, .home a:focus {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#footer {
+	margin: auto;
+	margin-top: 50px;
+	width: 500px;
+	height: 30px;
+	background: url(../../images/admin/footer-bg.png) bottom center no-repeat;
+	text-align: center;
+	font-family: "Times New Roman", Times, Georgia;
+	font-weight: normal;
+	font-size: 16px;
+	color: #8d8d8d;
+}
+
+#footer a {
+	text-decoration: none;
+	color: #8d8d8d;
+}
+
+#footer a:hover, #footer a:focus {
+	text-decoration: none;
+	color: #2d2d2d;
+}
+
+.login_button {
+	background-color:#3bb3e0;
+	font-family: 'Open Sans', sans-serif;
+	font-size:15px;
+	text-decoration:none;
+	color:#fff;
+	position:relative;
+	padding:10px 20px;
+	padding-right:50px;
+	background-image: linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+	background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0, rgb(44,160,202)),
+			color-stop(1, rgb(62,184,229))
+	);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+	-moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+	-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+}
+
+.login_button:active {
+	top:3px;
+	background-image: linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+	background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0, rgb(62,184,229)),
+			color-stop(1, rgb(44,160,202))
+	);
+	-webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+	-moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+	-o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+}
+
+.login_button::before {
+	background-color:#2591b4;
+	background-image:url(/static/images/admin/right_arrow.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	content:"";
+	width:20px;
+	height:20px;
+	position:absolute;
+	right:15px;
+	top:50%;
+	margin-top:-9px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
+	-moz-box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
+	-o-box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
+	box-shadow: inset 0px 1px 0px #052756, 0px 1px 0px #60c9f0;
+}
+
+.login_button:active::before {
+	top:50%;
+	margin-top:-12px;
+	-webkit-box-shadow: inset 0px 1px 0px #60c9f0, 0px 3px 0px #0e3871, 0px 6px 3px #1a80a6;
+	-moz-box-shadow: inset 0px 1px 0px #60c9f0, 0px 3px 0px #0e3871, 0px 6px 3px #1a80a6;
+	-o-box-shadow: inset 0px 1px 0px #60c9f0, 0px 3px 0px #0e3871, 0px 6px 3px #1a80a6;
+	box-shadow: inset 0px 1px 0px #60c9f0, 0px 3px 0px #0e3871, 0px 6px 3px #1a80a6;
+}
+
+.login-button {
+    padding-left: 30%;
+    padding-top: 35%;
+}
+

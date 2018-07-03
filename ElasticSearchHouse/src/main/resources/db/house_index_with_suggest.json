@@ -1,0 +1,95 @@
+{
+  "settings": {
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "house": {
+      "dynamic": false,
+      "properties": {
+        "houseId": {
+          "type": "long"
+        },
+        "title": {
+          "type": "text",
+          "index": "analyzed",
+          "analyzer": "ik_smart",
+          "search_analyzer": "ik_smart"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "area": {
+          "type": "integer"
+        },
+        "createTime": {
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+        },
+        "lastUpdateTime": {
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+        },
+        "cityEnName": {
+          "type": "keyword"
+        },
+        "regionEnName": {
+          "type": "keyword"
+        },
+        "direction": {
+          "type": "integer"
+        },
+        "distanceToSubway": {
+          "type": "integer"
+        },
+        "subwayLineName": {
+          "type": "keyword"
+        },
+        "subwayStationName": {
+          "type": "keyword"
+        },
+        "tags": {
+          "type": "text"
+        },
+        "street": {
+          "type": "keyword"
+        },
+        "district": {
+          "type": "keyword"
+        },
+        "description": {
+          "type": "text",
+          "index": "analyzed",
+          "analyzer": "ik_smart",
+          "search_analyzer": "ik_smart"
+        },
+        "layoutDesc" : {
+          "type": "text",
+          "index": "analyzed",
+          "analyzer": "ik_smart",
+          "search_analyzer": "ik_smart"
+        },
+        "traffic": {
+          "type": "text",
+          "index": "analyzed",
+          "analyzer": "ik_smart",
+          "search_analyzer": "ik_smart"
+        },
+        "roundService": {
+          "type": "text",
+          "index": "analyzed",
+          "analyzer": "ik_smart",
+          "search_analyzer": "ik_smart"
+        },
+        "rentWay": {
+          "type": "integer"
+        },
+        "suggest": {
+          "type": "completion"
+        },
+        "location": {
+          "type": "geo_point"
+        }
+      }
+    }
+  }
+}

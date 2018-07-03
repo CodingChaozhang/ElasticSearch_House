@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:include="admin/common :: head"></div>
+    <link rel="stylesheet" type="text/css" href="/static/lib/webuploader/0.1.5/webuploader.css">
+    <title>增加房源</title>
+</head>
+<body>
+<div>
+    <content class="page-container">
+        <form class="form form-horizontal" id="form-house-add">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>大标题：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="标题信息" id="title"
+                           name="title">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>省：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <span class="select-box" style="widows: 0;">
+                        <select class="select" name="province" id="province">
+                            <option value="">请选择</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>市：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <span class="select-box" style="widows: 0;">
+                        <select class="select" name="city" id="city">
+                            <option value="">请选择</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>区/县：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <span class="select-box" style="widows: 0;">
+                        <select class="select" name="region" id="region">
+                            <option value="">请选择</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>地址：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="详细地址" id="detailAddress"
+                           name="detailAddress">
+                </div>
+            </div>
+            <div class="row cl">
+
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>房屋格局：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <span class="select-box" style="widows: 0;">
+				        <select name="layout" class="select">
+					        <option value="1">一居室</option>
+                            <option value="2">两居室</option>
+                            <option value="3">三居室</option>
+                            <option value="4">四居室</option>
+                            <option value="5">其他</option>
+                        </select>
+				    </span>
+                </div>
+
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>所在楼层：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" value="0" placeholder="所在楼层" id="floor" name="floor">
+                </div>
+
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>总楼层：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" value="0" placeholder="所在楼层" id="totalFloor"
+                           name="totalFloor">
+                </div>
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>建筑时间：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text"
+                           onfocus="WdatePicker({ dateFmt:'yyyy',maxDate:'#F{$dp.$D(\'buildYear\')||\'%y\'}' })"
+                           id="buildYear" name="buildYear" class="input-text Wdate">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>面积：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" value="0" placeholder="" id="area" name="area">
+                </div>
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>定价：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" value="0" placeholder="" id="price" name="price">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">租赁方式：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <span class="select-box" style="widows: 0;">
+				        <select name="rentWay" class="select">
+                            <option value="0">整租</option>
+                            <option value="1">合租</option>
+                        </select>
+				    </span>
+                </div>
+                <label class="form-label col-xs-4 col-sm-2">地铁线路：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <span class="select-box" style="widows: 0;">
+				        <select name="nearSubwayLine" class="select">
+                            <option value="">请选择</option>
+                            <option value="0">1</option>
+                            <option value="1">2</option>
+                            <option value="13">13</option>
+                        </select>
+				    </span>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">地铁站：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <span class="select-box" style="widows: 0;">
+				        <select name="nearSubwayStation" class="select">
+                            <option value="">请选择</option>
+                            <option value="0">望京</option>
+                            <option value="1">望京西</option>
+                            <option value="2">望京南</option>
+                        </select>
+				    </span>
+                </div>
+                <label class="form-label col-xs-4 col-sm-2">距地铁距离：</label>
+                <div class="formControls col-xs-8 col-sm-2">
+                    <input type="text" class="input-text" value="0" placeholder="" id="distanceToSubway"
+                           name="distanceToSubway">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">关键词：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="可以输入多个关键词，以斜杠'/'做分隔符"
+                           id="keywords" name="keywords">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">户型介绍：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="房屋整体户型的相关介绍"
+                           id="layoutDesc" name="layoutDesc">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">交通出行：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="周边的交通设施"
+                           id="traffic" name="traffic">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">周边配套：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="周边的服务配套设施，如学校、医院等"
+                           id="roundService" name="roundService">
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">房屋描述：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="description" cols="" rows="" class="textarea" placeholder="说点什么...最少输入10个字符"
+                          datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！"
+                          onKeyUp="$.Huitextarealength(this,200)"></textarea>
+                    <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+                </div>
+            </div>
+
+            <div class="uploader-list-container" style=" width: 60%; height: 30%; position: relative;
+                margin-left:17%;">
+                <div class="queueList">
+                    <div id="dndArea" class="placeholder">
+                        <div id="filePicker-2"></div>
+                        <p>或将照片拖到这里，单次最多可选5张</p>
+                    </div>
+                </div>
+                <div class="statusBar" style="display:none;">
+                    <div class="progress"><span class="text">0%</span> <span class="percentage"></span></div>
+                    <div class="info"></div>
+                    <div class="btns">
+                        <div id="filePicker2"></div>
+                        <div class="uploadBtn">开始上传</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">封面：</label>
+                <div id="upload-cover-container" class="formControls col-xs-8 col-sm-9">
+                    <!-- 封面列表 -->
+                    <span>请先上传图片，从中选择封面</span>
+                </div>
+                <!--<input id="cover" type="hidden" value=""/>-->
+            </div>
+
+            <div class="upload-photo-ids-container">
+                <!--这里放上传OK图片的信息 在表单中一起上传-->
+            </div>
+
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                    <button class="btn btn-primary radius" type="submit"><i
+                            class="Hui-iconfont">&#xe632;</i> 提交审核
+                    </button>
+                    <!--<button onClick="layer_close();" class="btn btn-default radius"-->
+                    <button onClick="removeIframe();" class="btn btn-default radius"
+                            type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;
+                    </button>
+                </div>
+            </div>
+        </form>
+    </content>
+</div>
+
+<footer th:include="admin/common :: footer"></footer>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/static/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/static/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/static/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/static/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="/static/js/admin/upload.js"></script>
+<script type="text/javascript">
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>
